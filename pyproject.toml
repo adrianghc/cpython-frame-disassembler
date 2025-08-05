@@ -1,0 +1,10 @@
+[project]
+name = "frame_disassembler"
+version = "0.1"
+description = "Disassemble the current Python frame using C"
+
+[tool.setuptools]
+ext-modules = [
+    {name = "frame_disassembler.frame_disassembler", sources = ["frame_disassembler/frame_disassembler.c"]}
+]
+package-data = {"frame_disassembler" = ["frame_disassembler.pyi"]}
