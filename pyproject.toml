@@ -33,4 +33,4 @@ frame_disassembler = ["frame_disassembler.pyi", "py.typed"]
 
 [[tool.setuptools.ext-modules]]
 name = "frame_disassembler.frame_disassembler"
-sources = ["frame_disassembler/frame_disassembler.c"]
+sources = ["frame_disassembler/frame_disassembler.cpp"]
