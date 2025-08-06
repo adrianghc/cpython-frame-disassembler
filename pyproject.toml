@@ -1,10 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "frame_disassembler"
-version = "0.1"
-description = "Disassemble the current Python frame using C"
+version = "0.1.0"
+description = "Disassemble the current Python frame using C - a debugging tool for C extensions"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Adrian Georg Herrmann", email = "adrian.ghc@outlook.com"},
+    {name = "Christian Tismer", email = "tismer@stackless.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Debuggers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
 
 [tool.setuptools]
-ext-modules = [
-    {name = "frame_disassembler.frame_disassembler", sources = ["frame_disassembler/frame_disassembler.c"]}
-]
-package-data = {"frame_disassembler" = ["frame_disassembler.pyi"]}
+packages = ["frame_disassembler"]
+
+[tool.setuptools.package-data]
+frame_disassembler = ["frame_disassembler.pyi", "py.typed"]
+
+[[tool.setuptools.ext-modules]]
+name = "frame_disassembler.frame_disassembler"
+sources = ["frame_disassembler/frame_disassembler.c"]
