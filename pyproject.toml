@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "frame_disassembler"
 version = "0.1.0"
-description = "Disassemble the current Python frame using C - a debugging tool for C extensions"
+description = "CPython Frame Disassembler - Debugging tool for C extensions"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
